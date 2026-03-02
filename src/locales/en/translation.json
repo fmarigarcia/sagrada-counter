@@ -101,5 +101,15 @@
     "favorTokens": "Favor Tokens",
     "openSpaces": "Open Spaces",
     "selectPrivateObjective": "Select a private objective to calculate score."
+  },
+  "validation": {
+    "title": "Placement issues",
+    "cellRef": "Cell {{row}}, {{col}}",
+    "P1": "First die must be on an edge or corner.",
+    "P2": "Die must be adjacent to another die.",
+    "P3": "Die color does not match this cell restriction.",
+    "P4": "Die value does not match this cell restriction.",
+    "P5": "Orthogonally adjacent dice cannot share the same color.",
+    "P6": "Orthogonally adjacent dice cannot share the same value."
   }
 }
