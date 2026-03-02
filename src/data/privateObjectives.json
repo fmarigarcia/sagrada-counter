@@ -2,26 +2,97 @@
   {
     "id": "private-red",
     "nameKey": "objectives.privateRed.name",
+    "scoringType": "color",
     "color": "red"
   },
   {
     "id": "private-yellow",
     "nameKey": "objectives.privateYellow.name",
+    "scoringType": "color",
     "color": "yellow"
   },
   {
     "id": "private-green",
     "nameKey": "objectives.privateGreen.name",
+    "scoringType": "color",
     "color": "green"
   },
   {
     "id": "private-blue",
     "nameKey": "objectives.privateBlue.name",
+    "scoringType": "color",
     "color": "blue"
   },
   {
     "id": "private-purple",
     "nameKey": "objectives.privatePurple.name",
+    "scoringType": "color",
     "color": "purple"
+  },
+  {
+    "id": "private-contrafuerte",
+    "nameKey": "objectives.privateContrafuerte.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
+  },
+  {
+    "id": "private-lumbrera",
+    "nameKey": "objectives.privateLumbrera.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
+  },
+  {
+    "id": "private-mensulas",
+    "nameKey": "objectives.privateMensulas.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
+  },
+  {
+    "id": "private-cercado",
+    "nameKey": "objectives.privateCercado.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
+  },
+  {
+    "id": "private-muro",
+    "nameKey": "objectives.privateMuro.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
+  },
+  {
+    "id": "private-galeria",
+    "nameKey": "objectives.privateGaleria.name",
+    "scoringType": "pattern",
+    "shadedCells": [
+      [true, false, true, false, true],
+      [false, true, false, true, false],
+      [true, false, true, false, true],
+      [false, true, false, true, false]
+    ]
   }
 ]

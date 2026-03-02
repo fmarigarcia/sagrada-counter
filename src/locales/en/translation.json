@@ -36,6 +36,7 @@
     "vpPerUnit": "{{value}} VP",
     "add": "Add",
     "remove": "Remove",
+    "patternDescription": "Sum of dice values on shaded cells",
     "selectObjective": "Select objective",
     "added": "Added",
     "rowColorVariety": {
@@ -92,6 +93,30 @@
     },
     "privatePurple": {
       "name": "Shades of Purple"
+    },
+    "privateContrafuerte": {
+      "name": "Contrafuerte",
+      "description": "Sum of dice values on shaded cells"
+    },
+    "privateLumbrera": {
+      "name": "Lumbrera",
+      "description": "Sum of dice values on shaded cells"
+    },
+    "privateMensulas": {
+      "name": "Ménsulas",
+      "description": "Sum of dice values on shaded cells"
+    },
+    "privateCercado": {
+      "name": "Cercado",
+      "description": "Sum of dice values on shaded cells"
+    },
+    "privateMuro": {
+      "name": "Muro",
+      "description": "Sum of dice values on shaded cells"
+    },
+    "privateGaleria": {
+      "name": "Galería",
+      "description": "Sum of dice values on shaded cells"
     }
   },
   "tokens": {

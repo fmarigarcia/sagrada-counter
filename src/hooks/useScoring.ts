@@ -84,7 +84,10 @@ const useScoring = (
                   [rowIndex - 1, colIndex + 1],
                   [rowIndex + 1, colIndex - 1],
                   [rowIndex + 1, colIndex + 1],
-                ].some(([checkRow, checkCol]) => board[checkRow]?.[checkCol]?.die?.color === cell.die?.color);
+                ].some(
+                  ([checkRow, checkCol]) =>
+                    board[checkRow]?.[checkCol]?.die?.color === cell.die?.color,
+                );
                 return hasMatchingDiagonal ? rowTotal + objective.vpPerUnit : rowTotal;
               }, 0),
             0,
@@ -97,9 +100,18 @@ const useScoring = (
       vp: scoreForObjective(objective),
     }));
 
-    const privateScore = dice
-      .filter((die) => die.color === selectedPrivate.color)
-      .reduce((total, die) => total + die.value, 0);
+    const privateScore =
+      selectedPrivate.scoringType === 'color'
+        ? dice
+            .filter((die) => die.color === selectedPrivate.color)
+            .reduce((total, die) => total + die.value, 0)
+        : board
+            .flatMap((row, rowIndex) =>
+              row.map((cell, colIndex) =>
+                selectedPrivate.shadedCells[rowIndex]?.[colIndex] && cell.die ? cell.die.value : 0,
+              ),
+            )
+            .reduce((total: number, value) => total + value, 0);
 
     const openSpaces = board.flatMap((row) => row).filter((cell) => cell.die === null).length;
     const openSpacePenalty = -openSpaces;

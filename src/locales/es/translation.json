@@ -36,6 +36,7 @@
     "vpPerUnit": "{{value}} PV",
     "add": "Agregar",
     "remove": "Quitar",
+    "patternDescription": "Suma de los valores de los dados en las casillas sombreadas",
     "selectObjective": "Seleccionar objetivo",
     "added": "Agregado",
     "rowColorVariety": {
@@ -92,6 +93,30 @@
     },
     "privatePurple": {
       "name": "Tonos de Morado"
+    },
+    "privateContrafuerte": {
+      "name": "Contrafuerte",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
+    },
+    "privateLumbrera": {
+      "name": "Lumbrera",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
+    },
+    "privateMensulas": {
+      "name": "Ménsulas",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
+    },
+    "privateCercado": {
+      "name": "Cercado",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
+    },
+    "privateMuro": {
+      "name": "Muro",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
+    },
+    "privateGaleria": {
+      "name": "Galería",
+      "description": "Suma de los valores de los dados en las casillas sombreadas"
     }
   },
   "tokens": {

@@ -45,11 +45,9 @@ export interface PublicObjective {
   scoringType: PublicScoringType;
 }
 
-export interface PrivateObjective {
-  id: string;
-  nameKey: string;
-  color: DiceColor;
-}
+export type PrivateObjective =
+  | { id: string; nameKey: string; scoringType: 'color'; color: DiceColor }
+  | { id: string; nameKey: string; scoringType: 'pattern'; shadedCells: boolean[][] };
 
 export interface ObjectiveScore {
   objective: PublicObjective;
