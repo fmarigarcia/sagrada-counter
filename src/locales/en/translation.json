@@ -17,5 +17,12 @@
     "clear": "Clear",
     "cancel": "Cancel",
     "confirm": "Confirm"
+  },
+  "photo": {
+    "capture": "Take Photo",
+    "upload": "Upload Photo",
+    "analysing": "Analysing…",
+    "error": "Could not analyse photo. Please try again or fill in manually.",
+    "cameraError": "Could not access camera. Please allow camera permission."
   }
 }

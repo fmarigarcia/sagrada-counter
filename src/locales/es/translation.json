@@ -17,5 +17,12 @@
     "clear": "Limpiar",
     "cancel": "Cancelar",
     "confirm": "Confirmar"
+  },
+  "photo": {
+    "capture": "Tomar foto",
+    "upload": "Subir foto",
+    "analysing": "Analizando…",
+    "error": "No se pudo analizar la foto. Inténtalo de nuevo o completa manualmente.",
+    "cameraError": "No se pudo acceder a la cámara. Permite el acceso a la cámara."
   }
 }

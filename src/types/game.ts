@@ -24,3 +24,10 @@ export interface WindowPattern {
   difficulty: number;
   grid: CellRestriction[][];
 }
+
+export interface AnalysisPlacement {
+  row: number;
+  col: number;
+  color: DiceColor;
+  value: DiceValue;
+}

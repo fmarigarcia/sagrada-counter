@@ -1,43 +1,45 @@
-import { useRef } from 'react'
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface PhotoUploadProps {
-  onPhoto: (dataUrl: string) => void
+  onPhoto: (dataUrl: string) => void;
 }
 
 const PhotoUpload: React.FC<PhotoUploadProps> = ({ onPhoto }) => {
-  const inputRef = useRef<HTMLInputElement>(null)
+  const { t } = useTranslation();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const reader = new FileReader()
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
     reader.onload = (ev) => {
-      const result = ev.target?.result
-      if (typeof result === 'string') onPhoto(result)
-    }
-    reader.readAsDataURL(file)
-    // Reset so same file can be re-selected
-    e.target.value = ''
-  }
+      const result = ev.target?.result;
+      if (typeof result === 'string') onPhoto(result);
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
+  };
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex w-full flex-col items-center">
       <input
         ref={inputRef}
         type="file"
         accept="image/*"
         className="hidden"
         onChange={handleFileChange}
-        aria-label="Upload photo from device"
+        aria-label={t('photo.upload')}
       />
       <button
+        type="button"
         onClick={() => inputRef.current?.click()}
-        className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold px-5 py-3 rounded-full shadow-md transition-colors"
+        className="rounded-full bg-emerald-600 px-5 py-3 font-semibold text-white shadow-md transition-colors hover:bg-emerald-700 active:bg-emerald-800"
       >
-        🖼️ Upload Photo
+        {t('photo.upload')}
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default PhotoUpload
+export default PhotoUpload;
