@@ -51,6 +51,26 @@ export interface PrivateObjective {
   color: DiceColor;
 }
 
+export interface ObjectiveScore {
+  objective: PublicObjective;
+  vp: number;
+}
+
+export interface ScoreBreakdown {
+  publicObjectives: ObjectiveScore[];
+  privateObjective: { objective: PrivateObjective; vp: number };
+  favorTokens: number;
+  openSpacePenalty: number;
+  total: number;
+}
+
+export interface ValidationError {
+  row: number;
+  col: number;
+  rule: 'P1' | 'P2' | 'P3' | 'P4' | 'P5' | 'P6';
+  message: string;
+}
+
 export interface AnalysisPlacement {
   row: number;
   col: number;

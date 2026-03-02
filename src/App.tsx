@@ -7,11 +7,13 @@ import TokenCounter from './components/common/TokenCounter';
 import ObjectiveSelector from './components/objectives/ObjectiveSelector';
 import PhotoCapture from './components/PhotoCapture';
 import PhotoUpload from './components/PhotoUpload';
+import ScoreDisplay from './components/score/ScoreDisplay';
 import privateObjectivesData from './data/privateObjectives.json';
 import publicObjectivesData from './data/publicObjectives.json';
 import windowPatterns from './data/windowPatterns.json';
 import useBoardState from './hooks/useBoardState';
 import usePhotoAnalysis from './hooks/usePhotoAnalysis';
+import useScoring from './hooks/useScoring';
 import type { Die, PrivateObjective, PublicObjective, WindowPattern } from './types/game';
 
 interface SelectedCell {
@@ -78,6 +80,18 @@ const App: React.FC = () => {
     setSelectedPrivateId('');
   };
 
+  const selectedPublicObjectives = publicObjectives.filter((objective) =>
+    selectedPublicIds.includes(objective.id),
+  );
+  const selectedPrivateObjective =
+    privateObjectives.find((objective) => objective.id === selectedPrivateId) ?? null;
+  const score = useScoring(
+    board,
+    selectedPublicObjectives,
+    selectedPrivateObjective,
+    favorTokens,
+  );
+
   const selectedDie =
     selectedCell === null ? null : board[selectedCell.row][selectedCell.col]?.die ?? null;
 
@@ -130,6 +144,7 @@ const App: React.FC = () => {
           />
         </section>
         <TokenCounter value={favorTokens} onChange={setFavorTokens} />
+        <ScoreDisplay score={score} />
       </div>
       {selectedCell && (
         <DiePicker

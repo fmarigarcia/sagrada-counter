@@ -93,5 +93,13 @@
     "label": "Fichas de Favor restantes",
     "increment": "Incrementar fichas de favor",
     "decrement": "Disminuir fichas de favor"
+  },
+  "score": {
+    "total": "PV Totales",
+    "breakdown": "Desglose de Puntuación",
+    "privateObjective": "Objetivo privado",
+    "favorTokens": "Fichas de Favor",
+    "openSpaces": "Espacios vacíos",
+    "selectPrivateObjective": "Selecciona un objetivo privado para calcular la puntuación."
   }
 }
