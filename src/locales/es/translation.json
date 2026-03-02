@@ -101,5 +101,15 @@
     "favorTokens": "Fichas de Favor",
     "openSpaces": "Espacios vacíos",
     "selectPrivateObjective": "Selecciona un objetivo privado para calcular la puntuación."
+  },
+  "validation": {
+    "title": "Errores de colocación",
+    "cellRef": "Celda {{row}}, {{col}}",
+    "P1": "El primer dado debe colocarse en un borde o esquina.",
+    "P2": "El dado debe estar adyacente a otro dado.",
+    "P3": "El color del dado no coincide con la restricción de la celda.",
+    "P4": "El valor del dado no coincide con la restricción de la celda.",
+    "P5": "Dados ortogonalmente adyacentes no pueden compartir color.",
+    "P6": "Dados ortogonalmente adyacentes no pueden compartir valor."
   }
 }

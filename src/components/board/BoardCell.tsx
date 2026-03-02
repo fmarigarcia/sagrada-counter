@@ -6,6 +6,7 @@ interface BoardCellProps {
   cell: Cell;
   row: number;
   col: number;
+  hasError: boolean;
   onCellClick: (row: number, col: number) => void;
 }
 
@@ -17,7 +18,7 @@ const colorClassMap: Record<DiceColor, string> = {
   purple: 'bg-purple-500',
 };
 
-const BoardCell: React.FC<BoardCellProps> = ({ cell, row, col, onCellClick }) => {
+const BoardCell: React.FC<BoardCellProps> = ({ cell, row, col, hasError, onCellClick }) => {
   const { t } = useTranslation();
   const restrictionColor =
     cell.restriction.type === 'color'
@@ -28,7 +29,9 @@ const BoardCell: React.FC<BoardCellProps> = ({ cell, row, col, onCellClick }) =>
     <button
       type="button"
       onClick={() => onCellClick(row, col)}
-      className="relative aspect-square rounded-xl border border-gray-300 bg-white p-2 shadow-sm"
+      className={`relative aspect-square rounded-xl border bg-white p-2 shadow-sm ${
+        hasError ? 'border-red-500 ring-1 ring-red-300' : 'border-gray-300'
+      }`}
       aria-label={t('board.cellAria', { row: row + 1, col: col + 1 })}
     >
       <div className="absolute left-1 top-1">

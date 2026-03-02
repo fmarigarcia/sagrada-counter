@@ -8,12 +8,14 @@ import ObjectiveSelector from './components/objectives/ObjectiveSelector';
 import PhotoCapture from './components/PhotoCapture';
 import PhotoUpload from './components/PhotoUpload';
 import ScoreDisplay from './components/score/ScoreDisplay';
+import ValidationBanner from './components/validation/ValidationBanner';
 import privateObjectivesData from './data/privateObjectives.json';
 import publicObjectivesData from './data/publicObjectives.json';
 import windowPatterns from './data/windowPatterns.json';
 import useBoardState from './hooks/useBoardState';
 import usePhotoAnalysis from './hooks/usePhotoAnalysis';
 import useScoring from './hooks/useScoring';
+import useValidation from './hooks/useValidation';
 import type { Die, PrivateObjective, PublicObjective, WindowPattern } from './types/game';
 
 interface SelectedCell {
@@ -91,6 +93,7 @@ const App: React.FC = () => {
     selectedPrivateObjective,
     favorTokens,
   );
+  const validationErrors = useValidation(board);
 
   const selectedDie =
     selectedCell === null ? null : board[selectedCell.row][selectedCell.col]?.die ?? null;
@@ -115,7 +118,12 @@ const App: React.FC = () => {
           {photoLoading && <p className="text-sm text-gray-500">{t('photo.analysing')}</p>}
           {photoError && <p className="text-sm text-red-500">{t('photo.error')}</p>}
         </div>
-        <BoardGrid board={board} onCellClick={(row, col) => setSelectedCell({ row, col })} />
+        <ValidationBanner errors={validationErrors} />
+        <BoardGrid
+          board={board}
+          errors={validationErrors}
+          onCellClick={(row, col) => setSelectedCell({ row, col })}
+        />
         <button
           type="button"
           onClick={reset}
