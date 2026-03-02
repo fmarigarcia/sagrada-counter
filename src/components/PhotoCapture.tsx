@@ -38,7 +38,9 @@ const PhotoCapture: React.FC<PhotoCaptureProps> = ({ onPhoto }) => {
     setStreaming(false);
   }, []);
 
-  useEffect(() => stopCamera, [stopCamera]);
+  useEffect(() => {
+    return stopCamera;
+  }, [stopCamera]);
 
   const takePhoto = useCallback(() => {
     if (!videoRef.current || !canvasRef.current) return;

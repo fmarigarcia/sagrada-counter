@@ -118,8 +118,8 @@ const usePhotoAnalysis = (): UsePhotoAnalysisReturn => {
       }
 
       return placements;
-    } catch {
-      setError('ANALYSIS_FAILED');
+    } catch (analysisError: unknown) {
+      setError(analysisError instanceof Error ? analysisError.message : 'ANALYSIS_FAILED');
       return [];
     } finally {
       setLoading(false);
