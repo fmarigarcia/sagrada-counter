@@ -29,6 +29,9 @@
     "publicLabel": "Public Objectives (choose up to 3)",
     "privateLabel": "Private Objective",
     "vpPerUnit": "{{value}} VP",
+    "add": "Add",
+    "remove": "Remove",
+    "added": "Added",
     "rowColorVariety": {
       "name": "Row Color Variety",
       "description": "6 VP for each complete row with no repeated colors"

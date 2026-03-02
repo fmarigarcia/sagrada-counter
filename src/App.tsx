@@ -110,6 +110,8 @@ const App: React.FC = () => {
             objectives={publicObjectives}
             selectedIds={selectedPublicIds}
             onToggle={handlePublicToggle}
+            max={3}
+            allowMultiple
           />
         </section>
         <section className="flex flex-col gap-2">
@@ -118,6 +120,8 @@ const App: React.FC = () => {
             objectives={privateObjectives}
             selectedIds={[selectedPrivateId]}
             onToggle={handlePrivateToggle}
+            max={1}
+            allowMultiple={false}
           />
         </section>
         <TokenCounter value={favorTokens} onChange={setFavorTokens} />

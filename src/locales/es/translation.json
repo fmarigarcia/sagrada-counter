@@ -29,6 +29,9 @@
     "publicLabel": "Objetivos públicos (elige hasta 3)",
     "privateLabel": "Objetivo privado",
     "vpPerUnit": "{{value}} PV",
+    "add": "Agregar",
+    "remove": "Quitar",
+    "added": "Agregado",
     "rowColorVariety": {
       "name": "Variedad de Color en Filas",
       "description": "6 PV por cada fila completa sin colores repetidos"

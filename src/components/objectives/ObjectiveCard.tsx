@@ -5,17 +5,23 @@ import type { PrivateObjective, PublicObjective } from '../../types/game';
 interface ObjectiveCardProps {
   objective: PublicObjective | PrivateObjective;
   selected: boolean;
-  onToggle: (id: string) => void;
+  onAction: (id: string) => void;
+  actionLabel: string;
+  actionDisabled: boolean;
 }
 
-const ObjectiveCard: React.FC<ObjectiveCardProps> = ({ objective, selected, onToggle }) => {
+const ObjectiveCard: React.FC<ObjectiveCardProps> = ({
+  objective,
+  selected,
+  onAction,
+  actionLabel,
+  actionDisabled,
+}) => {
   const { t } = useTranslation();
   const isPublic = 'descriptionKey' in objective;
 
   return (
-    <button
-      type="button"
-      onClick={() => onToggle(objective.id)}
+    <div
       className={`w-full rounded-xl border p-3 text-left ${
         selected ? 'border-indigo-600 bg-indigo-50' : 'border-gray-300 bg-white'
       }`}
@@ -27,7 +33,17 @@ const ObjectiveCard: React.FC<ObjectiveCardProps> = ({ objective, selected, onTo
           {t(objective.descriptionKey)}
         </p>
       )}
-    </button>
+      <div className="mt-2 flex justify-end">
+        <button
+          type="button"
+          onClick={() => onAction(objective.id)}
+          disabled={actionDisabled}
+          className="rounded-lg bg-indigo-600 px-3 py-1 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:bg-gray-300"
+        >
+          {actionLabel}
+        </button>
+      </div>
+    </div>
   );
 };
 
