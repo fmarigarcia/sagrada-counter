@@ -24,5 +24,74 @@
     "analysing": "Analysing…",
     "error": "Could not analyse photo. Please try again or fill in manually.",
     "cameraError": "Could not access camera. Please allow camera permission."
+  },
+  "objectives": {
+    "publicLabel": "Public Objectives (choose up to 3)",
+    "privateLabel": "Private Objective",
+    "vpPerUnit": "{{value}} VP",
+    "add": "Add",
+    "remove": "Remove",
+    "selectObjective": "Select objective",
+    "added": "Added",
+    "rowColorVariety": {
+      "name": "Row Color Variety",
+      "description": "6 VP for each complete row with no repeated colors"
+    },
+    "colColorVariety": {
+      "name": "Column Color Variety",
+      "description": "5 VP for each complete column with no repeated colors"
+    },
+    "rowShadeVariety": {
+      "name": "Row Shade Variety",
+      "description": "5 VP for each complete row with no repeated values"
+    },
+    "colShadeVariety": {
+      "name": "Column Shade Variety",
+      "description": "4 VP for each complete column with no repeated values"
+    },
+    "lightShades": {
+      "name": "Light Shades",
+      "description": "2 VP per pair of 1-value and 2-value dice"
+    },
+    "mediumShades": {
+      "name": "Medium Shades",
+      "description": "2 VP per pair of 3-value and 4-value dice"
+    },
+    "deepShades": {
+      "name": "Deep Shades",
+      "description": "2 VP per pair of 5-value and 6-value dice"
+    },
+    "shadeVariety": {
+      "name": "Shade Variety",
+      "description": "5 VP per set of one die of each value from 1 to 6"
+    },
+    "colorVariety": {
+      "name": "Color Variety",
+      "description": "4 VP per set of one die of each color"
+    },
+    "colorDiagonals": {
+      "name": "Color Diagonals",
+      "description": "1 VP per die with a diagonal die of the same color"
+    },
+    "privateRed": {
+      "name": "Shades of Red"
+    },
+    "privateYellow": {
+      "name": "Shades of Yellow"
+    },
+    "privateGreen": {
+      "name": "Shades of Green"
+    },
+    "privateBlue": {
+      "name": "Shades of Blue"
+    },
+    "privatePurple": {
+      "name": "Shades of Purple"
+    }
+  },
+  "tokens": {
+    "label": "Favor Tokens remaining",
+    "increment": "Increase favor tokens",
+    "decrement": "Decrease favor tokens"
   }
 }

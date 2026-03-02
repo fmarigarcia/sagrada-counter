@@ -25,6 +25,32 @@ export interface WindowPattern {
   grid: CellRestriction[][];
 }
 
+export type PublicScoringType =
+  | 'rowColorVariety'
+  | 'colColorVariety'
+  | 'rowShadeVariety'
+  | 'colShadeVariety'
+  | 'lightShades'
+  | 'mediumShades'
+  | 'deepShades'
+  | 'shadeVariety'
+  | 'colorVariety'
+  | 'colorDiagonals';
+
+export interface PublicObjective {
+  id: string;
+  nameKey: string;
+  descriptionKey: string;
+  vpPerUnit: number;
+  scoringType: PublicScoringType;
+}
+
+export interface PrivateObjective {
+  id: string;
+  nameKey: string;
+  color: DiceColor;
+}
+
 export interface AnalysisPlacement {
   row: number;
   col: number;

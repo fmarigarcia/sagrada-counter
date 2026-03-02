@@ -3,12 +3,16 @@ import { useTranslation } from 'react-i18next';
 import BoardGrid from './components/board/BoardGrid';
 import DiePicker from './components/board/DiePicker';
 import WindowPatternSelector from './components/board/WindowPatternSelector';
+import TokenCounter from './components/common/TokenCounter';
+import ObjectiveSelector from './components/objectives/ObjectiveSelector';
 import PhotoCapture from './components/PhotoCapture';
 import PhotoUpload from './components/PhotoUpload';
+import privateObjectivesData from './data/privateObjectives.json';
+import publicObjectivesData from './data/publicObjectives.json';
 import windowPatterns from './data/windowPatterns.json';
 import useBoardState from './hooks/useBoardState';
 import usePhotoAnalysis from './hooks/usePhotoAnalysis';
-import type { Die, WindowPattern } from './types/game';
+import type { Die, PrivateObjective, PublicObjective, WindowPattern } from './types/game';
 
 interface SelectedCell {
   row: number;
@@ -18,8 +22,13 @@ interface SelectedCell {
 const App: React.FC = () => {
   const { t } = useTranslation();
   const patterns = windowPatterns as WindowPattern[];
+  const publicObjectives = publicObjectivesData as PublicObjective[];
+  const privateObjectives = privateObjectivesData as PrivateObjective[];
   const [selectedPatternId, setSelectedPatternId] = useState<string>(patterns[0].id);
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
+  const [selectedPublicIds, setSelectedPublicIds] = useState<string[]>([]);
+  const [selectedPrivateId, setSelectedPrivateId] = useState<string>('');
+  const [favorTokens, setFavorTokens] = useState<number>(0);
   const { board, setDie, loadPattern, prefillFromAnalysis, reset } = useBoardState();
   const { analyse, loading: photoLoading, error: photoError } = usePhotoAnalysis();
 
@@ -46,6 +55,27 @@ const App: React.FC = () => {
     if (placements.length > 0) {
       prefillFromAnalysis(placements);
     }
+  };
+
+  const handlePublicAdd = (id: string): void => {
+    setSelectedPublicIds((prev) => {
+      if (prev.length >= 3) {
+        return prev;
+      }
+      return [...prev, id];
+    });
+  };
+
+  const handlePublicRemove = (id: string): void => {
+    setSelectedPublicIds((prev) => prev.filter((selectedId) => selectedId !== id));
+  };
+
+  const handlePrivateAdd = (id: string): void => {
+    setSelectedPrivateId(id);
+  };
+
+  const handlePrivateRemove = (): void => {
+    setSelectedPrivateId('');
   };
 
   const selectedDie =
@@ -79,6 +109,27 @@ const App: React.FC = () => {
         >
           {t('board.clearAllDice')}
         </button>
+        <section className="flex flex-col gap-2">
+          <h2 className="text-sm font-semibold text-gray-700">{t('objectives.publicLabel')}</h2>
+          <ObjectiveSelector
+            objectives={publicObjectives}
+            selectedIds={selectedPublicIds}
+            onAdd={handlePublicAdd}
+            onRemove={handlePublicRemove}
+            max={3}
+          />
+        </section>
+        <section className="flex flex-col gap-2">
+          <h2 className="text-sm font-semibold text-gray-700">{t('objectives.privateLabel')}</h2>
+          <ObjectiveSelector
+            objectives={privateObjectives}
+            selectedIds={selectedPrivateId.length > 0 ? [selectedPrivateId] : []}
+            onAdd={handlePrivateAdd}
+            onRemove={handlePrivateRemove}
+            max={1}
+          />
+        </section>
+        <TokenCounter value={favorTokens} onChange={setFavorTokens} />
       </div>
       {selectedCell && (
         <DiePicker

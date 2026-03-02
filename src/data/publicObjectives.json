@@ -1,0 +1,72 @@
+[
+  {
+    "id": "row-color-variety",
+    "nameKey": "objectives.rowColorVariety.name",
+    "descriptionKey": "objectives.rowColorVariety.description",
+    "vpPerUnit": 6,
+    "scoringType": "rowColorVariety"
+  },
+  {
+    "id": "col-color-variety",
+    "nameKey": "objectives.colColorVariety.name",
+    "descriptionKey": "objectives.colColorVariety.description",
+    "vpPerUnit": 5,
+    "scoringType": "colColorVariety"
+  },
+  {
+    "id": "row-shade-variety",
+    "nameKey": "objectives.rowShadeVariety.name",
+    "descriptionKey": "objectives.rowShadeVariety.description",
+    "vpPerUnit": 5,
+    "scoringType": "rowShadeVariety"
+  },
+  {
+    "id": "col-shade-variety",
+    "nameKey": "objectives.colShadeVariety.name",
+    "descriptionKey": "objectives.colShadeVariety.description",
+    "vpPerUnit": 4,
+    "scoringType": "colShadeVariety"
+  },
+  {
+    "id": "light-shades",
+    "nameKey": "objectives.lightShades.name",
+    "descriptionKey": "objectives.lightShades.description",
+    "vpPerUnit": 2,
+    "scoringType": "lightShades"
+  },
+  {
+    "id": "medium-shades",
+    "nameKey": "objectives.mediumShades.name",
+    "descriptionKey": "objectives.mediumShades.description",
+    "vpPerUnit": 2,
+    "scoringType": "mediumShades"
+  },
+  {
+    "id": "deep-shades",
+    "nameKey": "objectives.deepShades.name",
+    "descriptionKey": "objectives.deepShades.description",
+    "vpPerUnit": 2,
+    "scoringType": "deepShades"
+  },
+  {
+    "id": "shade-variety",
+    "nameKey": "objectives.shadeVariety.name",
+    "descriptionKey": "objectives.shadeVariety.description",
+    "vpPerUnit": 5,
+    "scoringType": "shadeVariety"
+  },
+  {
+    "id": "color-variety",
+    "nameKey": "objectives.colorVariety.name",
+    "descriptionKey": "objectives.colorVariety.description",
+    "vpPerUnit": 4,
+    "scoringType": "colorVariety"
+  },
+  {
+    "id": "color-diagonals",
+    "nameKey": "objectives.colorDiagonals.name",
+    "descriptionKey": "objectives.colorDiagonals.description",
+    "vpPerUnit": 1,
+    "scoringType": "colorDiagonals"
+  }
+]
