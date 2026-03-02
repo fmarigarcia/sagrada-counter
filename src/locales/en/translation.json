@@ -31,6 +31,7 @@
     "vpPerUnit": "{{value}} VP",
     "add": "Add",
     "remove": "Remove",
+    "selectObjective": "Select objective",
     "added": "Added",
     "rowColorVariety": {
       "name": "Row Color Variety",
