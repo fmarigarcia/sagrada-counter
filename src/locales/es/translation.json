@@ -28,6 +28,7 @@
     "upload": "Subir foto",
     "analysing": "Analizando…",
     "error": "No se pudo analizar la foto. Inténtalo de nuevo o completa manualmente.",
+    "rateLimited": "Límite de API alcanzado. Reintenta en {{seconds}}s.",
     "cameraError": "No se pudo acceder a la cámara. Permite el acceso a la cámara."
   },
   "objectives": {
@@ -40,44 +41,44 @@
     "selectObjective": "Seleccionar objetivo",
     "added": "Agregado",
     "rowColorVariety": {
-      "name": "Variedad de Color en Filas",
-      "description": "6 PV por cada fila completa sin colores repetidos"
+      "name": "Fila de varios colores",
+      "description": "Filas sin colores repetidos."
     },
     "colColorVariety": {
-      "name": "Variedad de Color en Columnas",
-      "description": "5 PV por cada columna completa sin colores repetidos"
+      "name": "Columna de varios colores",
+      "description": "Columnas sin colores repetidos."
     },
     "rowShadeVariety": {
-      "name": "Variedad de Tonos en Filas",
-      "description": "5 PV por cada fila completa sin valores repetidos"
+      "name": "Fila de opacidad variada",
+      "description": "Filas sin valores repetidos."
     },
     "colShadeVariety": {
-      "name": "Variedad de Tonos en Columnas",
-      "description": "4 PV por cada columna completa sin valores repetidos"
+      "name": "Columna de opacidad variada",
+      "description": "Columnas sin valores repetidos."
     },
     "lightShades": {
-      "name": "Tonos Claros",
-      "description": "2 PV por cada par de dados con valor 1 y 2"
+      "name": "Opacidades leves",
+      "description": "Grupos de 1 y 2 en cualquier posición."
     },
     "mediumShades": {
-      "name": "Tonos Medios",
-      "description": "2 PV por cada par de dados con valor 3 y 4"
+      "name": "Opacidades medias",
+      "description": "Grupos de 3 y 4 en cualquier posición."
     },
     "deepShades": {
-      "name": "Tonos Intensos",
-      "description": "2 PV por cada par de dados con valor 5 y 6"
+      "name": "Opacidades intensas",
+      "description": "Grupos de 5 y 6 en cualquier posición."
     },
     "shadeVariety": {
-      "name": "Variedad de Tonos",
-      "description": "5 PV por cada conjunto con un dado de cada valor del 1 al 6"
+      "name": "Variedad de opacidades",
+      "description": "Grupos de uno de cada valor en cualquier posición."
     },
     "colorVariety": {
-      "name": "Variedad de Color",
-      "description": "4 PV por cada conjunto con un dado de cada color"
+      "name": "Variedad de colores",
+      "description": "Grupos de uno de cada color en cualquier posición."
     },
     "colorDiagonals": {
-      "name": "Diagonales de Color",
-      "description": "1 PV por dado con al menos un dado diagonal del mismo color"
+      "name": "Diagonales de color",
+      "description": "Total de dados adyacentes en diagonal del mismo color."
     },
     "privateRed": {
       "name": "Tonos de Rojo"

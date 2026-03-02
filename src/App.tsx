@@ -87,16 +87,11 @@ const App: React.FC = () => {
   );
   const selectedPrivateObjective =
     privateObjectives.find((objective) => objective.id === selectedPrivateId) ?? null;
-  const score = useScoring(
-    board,
-    selectedPublicObjectives,
-    selectedPrivateObjective,
-    favorTokens,
-  );
+  const score = useScoring(board, selectedPublicObjectives, selectedPrivateObjective, favorTokens);
   const validationErrors = useValidation(board);
 
   const selectedDie =
-    selectedCell === null ? null : board[selectedCell.row][selectedCell.col]?.die ?? null;
+    selectedCell === null ? null : (board[selectedCell.row][selectedCell.col]?.die ?? null);
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-6">
@@ -116,7 +111,13 @@ const App: React.FC = () => {
             <PhotoUpload onPhoto={handlePhoto} />
           </div>
           {photoLoading && <p className="text-sm text-gray-500">{t('photo.analysing')}</p>}
-          {photoError && <p className="text-sm text-red-500">{t('photo.error')}</p>}
+          {photoError && (
+            <p className="text-sm text-red-500">
+              {photoError.startsWith('RATE_LIMITED:')
+                ? t('photo.rateLimited', { seconds: photoError.split(':')[1] })
+                : t('photo.error')}
+            </p>
+          )}
         </div>
         <ValidationBanner errors={validationErrors} />
         <BoardGrid

@@ -28,6 +28,7 @@
     "upload": "Upload Photo",
     "analysing": "Analysing…",
     "error": "Could not analyse photo. Please try again or fill in manually.",
+    "rateLimited": "API rate limit reached. Please retry in {{seconds}}s.",
     "cameraError": "Could not access camera. Please allow camera permission."
   },
   "objectives": {

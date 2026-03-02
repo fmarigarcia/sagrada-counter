@@ -4,21 +4,1329 @@
     "name": "Fulgor del Cielo",
     "difficulty": 6,
     "grid": [
-      [{ "type": "none" }, { "type": "color", "value": "yellow" }, { "type": "value", "value": 5 }, { "type": "none" }, { "type": "none" }],
-      [{ "type": "value", "value": 6 }, { "type": "none" }, { "type": "none" }, { "type": "color", "value": "blue" }, { "type": "none" }],
-      [{ "type": "none" }, { "type": "color", "value": "green" }, { "type": "none" }, { "type": "none" }, { "type": "value", "value": 2 }],
-      [{ "type": "none" }, { "type": "none" }, { "type": "color", "value": "purple" }, { "type": "none" }, { "type": "value", "value": 4 }]
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 4 }
+      ]
     ]
   },
   {
-    "id": "sun-catcher",
-    "name": "Sun Catcher",
+    "id": "vitralls",
+    "name": "Vitralls",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" }
+      ]
+    ]
+  },
+  {
+    "id": "ladron-de-sombras",
+    "name": "Ladrón de sombras",
     "difficulty": 5,
     "grid": [
-      [{ "type": "color", "value": "red" }, { "type": "none" }, { "type": "value", "value": 1 }, { "type": "none" }, { "type": "color", "value": "yellow" }],
-      [{ "type": "none" }, { "type": "value", "value": 3 }, { "type": "none" }, { "type": "color", "value": "green" }, { "type": "none" }],
-      [{ "type": "none" }, { "type": "color", "value": "blue" }, { "type": "none" }, { "type": "value", "value": 6 }, { "type": "none" }],
-      [{ "type": "value", "value": 2 }, { "type": "none" }, { "type": "color", "value": "purple" }, { "type": "none" }, { "type": "value", "value": 5 }]
+      [
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ],
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "color", "value": "yellow" }
+      ]
+    ]
+  },
+  {
+    "id": "esperanza",
+    "name": "Esperanza",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 4 }
+      ]
+    ]
+  },
+  {
+    "id": "bellesguard",
+    "name": "Bellesguard",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "value", "value": 5 },
+        { "type": "color", "value": "purple" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "romanico",
+    "name": "Románico",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 5 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 4 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "lux-astra",
+    "name": "Lux Astra",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "value", "value": 3 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 1 }
+      ]
+    ]
+  },
+  {
+    "id": "sueno-kaleidoscopico",
+    "name": "Sueño kaleidoscópico",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ]
+    ]
+  },
+  {
+    "id": "comitas",
+    "name": "Cómitas",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "value", "value": 1 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "sol",
+    "name": "Sol",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 5 }
+      ]
+    ]
+  },
+  {
+    "id": "aurorae-magnificus",
+    "name": "Aurorae Magnificus",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "color", "value": "red" }
+      ]
+    ]
+  },
+  {
+    "id": "agua-de-vida",
+    "name": "Agua de Vida",
+    "difficulty": 6,
+    "grid": [
+      [
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 1 }
+      ],
+      [
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ]
+    ]
+  },
+  {
+    "id": "sinfonia-de-luz",
+    "name": "Sinfonía de luz",
+    "difficulty": 6,
+    "grid": [
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "apricitas",
+    "name": "Apricitas",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "value", "value": 5 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" }
+      ]
+    ]
+  },
+  {
+    "id": "gotas-fractales",
+    "name": "Gotas fractales",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "armonia",
+    "name": "Armonía",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 1 },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "value", "value": 6 }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "color", "value": "purple" },
+        { "type": "value", "value": 5 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 3 },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 1 }
+      ]
+    ]
+  },
+  {
+    "id": "via-lux",
+    "name": "Via Lux",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 3 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "umbrio",
+    "name": "Umbrío",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 6 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 3 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "esplendor-solar",
+    "name": "Esplendor solar",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "luz-celestial",
+    "name": "Luz celestial",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "red" }
+      ]
+    ]
+  },
+  {
+    "id": "gravitas",
+    "name": "Gravitas",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 4 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "value", "value": 3 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 5 },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 1 }
+      ]
+    ]
+  },
+  {
+    "id": "virtus",
+    "name": "Virtus",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 4 }
+      ],
+      [
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 6 }
+      ]
+    ]
+  },
+  {
+    "id": "tenebra",
+    "name": "Tenebra",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "rizos-de-luz",
+    "name": "Rizos de luz",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "value", "value": 5 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 3 }
+      ]
+    ]
+  },
+  {
+    "id": "generosidad",
+    "name": "Generosidad",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "industrial",
+    "name": "Industrial",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "value", "value": 5 },
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "value", "value": 6 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "value", "value": 5 }
+      ]
+    ]
+  },
+  {
+    "id": "ligero",
+    "name": "Ligero",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "luz-de-hogar",
+    "name": "Luz de hogar",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "color", "value": "red" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "value", "value": 1 }
+      ]
+    ]
+  },
+  {
+    "id": "barcelona",
+    "name": "Barcelona",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "red" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "atrapaluces",
+    "name": "Atrapaluces",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "value", "value": 6 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "alegria",
+    "name": "Alegría",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "red" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ]
+    ]
+  },
+  {
+    "id": "batilo",
+    "name": "Batilo",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "value", "value": 1 }
+      ],
+      [
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 6 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "value", "value": 2 }
+      ]
+    ]
+  },
+  {
+    "id": "barroco",
+    "name": "Barroco",
+    "difficulty": 6,
+    "grid": [
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 5 },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "color", "value": "purple" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "lux-mundi",
+    "name": "Lux Mundi",
+    "difficulty": 6,
+    "grid": [
+      [
+        { "type": "value", "value": 6 },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 1 }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "color", "value": "blue" },
+        { "type": "value", "value": 5 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "value", "value": 3 },
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "color", "value": "red" },
+        { "type": "value", "value": 6 }
+      ]
+    ]
+  },
+  {
+    "id": "firmitas",
+    "name": "Firmitas",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "value", "value": 5 },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "red" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "color", "value": "yellow" },
+        { "type": "value", "value": 4 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" }
+      ]
+    ]
+  },
+  {
+    "id": "esplendor-cromatico",
+    "name": "Esplendor cromático",
+    "difficulty": 3,
+    "grid": [
+      [
+        { "type": "color", "value": "red" },
+        { "type": "color", "value": "yellow" },
+        { "type": "color", "value": "green" },
+        { "type": "color", "value": "blue" },
+        { "type": "color", "value": "purple" }
+      ],
+      [
+        { "type": "color", "value": "purple" },
+        { "type": "color", "value": "red" },
+        { "type": "color", "value": "yellow" },
+        { "type": "color", "value": "green" },
+        { "type": "color", "value": "blue" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "color", "value": "purple" },
+        { "type": "color", "value": "red" },
+        { "type": "color", "value": "yellow" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "color", "value": "blue" },
+        { "type": "color", "value": "purple" },
+        { "type": "color", "value": "red" },
+        { "type": "color", "value": "yellow" }
+      ]
+    ]
+  },
+  {
+    "id": "naturaleza",
+    "name": "Naturaleza",
+    "difficulty": 4,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 1 },
+        { "type": "none" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "green" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 3 },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "green" }
+      ],
+      [
+        { "type": "color", "value": "yellow" },
+        { "type": "none" },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 2 },
+        { "type": "none" }
+      ]
+    ]
+  },
+  {
+    "id": "aurora-sagradis",
+    "name": "Aurora Sagradis",
+    "difficulty": 5,
+    "grid": [
+      [
+        { "type": "none" },
+        { "type": "color", "value": "purple" },
+        { "type": "none" },
+        { "type": "color", "value": "blue" },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "red" },
+        { "type": "none" },
+        { "type": "value", "value": 4 },
+        { "type": "none" },
+        { "type": "color", "value": "yellow" }
+      ],
+      [
+        { "type": "none" },
+        { "type": "value", "value": 2 },
+        { "type": "color", "value": "green" },
+        { "type": "value", "value": 6 },
+        { "type": "none" }
+      ],
+      [
+        { "type": "color", "value": "blue" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "none" },
+        { "type": "color", "value": "purple" }
+      ]
     ]
   }
 ]

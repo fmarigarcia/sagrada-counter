@@ -1,14 +1,16 @@
 import { useCallback, useState } from 'react';
 import type { AnalysisPlacement, DiceColor, DiceValue } from '../types/game';
 
-interface GeminiResponse {
-  candidates?: Array<{
-    content?: {
-      parts?: Array<{
-        text?: string;
-      }>;
+interface GitHubModelsResponse {
+  choices?: Array<{
+    message?: {
+      content?: string | null;
     };
   }>;
+  error?: {
+    code?: string;
+    message?: string;
+  };
 }
 
 interface UsePhotoAnalysisReturn {
@@ -19,15 +21,6 @@ interface UsePhotoAnalysisReturn {
 
 const validColors: DiceColor[] = ['red', 'yellow', 'green', 'blue', 'purple'];
 const validValues: DiceValue[] = [1, 2, 3, 4, 5, 6];
-
-const getImageData = (dataUrl: string): { mimeType: string; data: string } | null => {
-  const [metadata, data] = dataUrl.split(',');
-  if (!metadata || !data) {
-    return null;
-  }
-  const mimeType = metadata.match(/^data:(.*);base64$/)?.[1] ?? 'image/jpeg';
-  return { mimeType, data };
-};
 
 const isValidPlacement = (entry: unknown): entry is AnalysisPlacement => {
   if (typeof entry !== 'object' || entry === null) {
@@ -58,8 +51,8 @@ const usePhotoAnalysis = (): UsePhotoAnalysisReturn => {
     setLoading(true);
     setError(null);
 
-    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!apiKey) {
+    const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+    if (!githubToken) {
       const keyError = 'MISSING_API_KEY';
       setError(keyError);
       setLoading(false);
@@ -67,48 +60,60 @@ const usePhotoAnalysis = (): UsePhotoAnalysisReturn => {
     }
 
     try {
-      const imageData = getImageData(dataUrl);
-      if (!imageData) {
+      if (!dataUrl.startsWith('data:')) {
         throw new Error('INVALID_IMAGE');
       }
 
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    inlineData: {
-                      mimeType: imageData.mimeType,
-                      data: imageData.data,
-                    },
-                  },
-                  {
-                    text: 'This is a Sagrada board game window (4 rows × 5 columns grid). Identify each die placed on the board. Return ONLY a valid JSON array, no markdown fences, with objects: { "row": 0-3, "col": 0-4, "color": "red|yellow|green|blue|purple", "value": 1-6 }. Use 0-based row/col indices. Omit empty cells.',
-                  },
-                ],
-              },
-            ],
-          }),
+      const response = await fetch('https://models.inference.ai.azure.com/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${githubToken}`,
         },
-      );
+        body: JSON.stringify({
+          model: 'gpt-4o',
+          messages: [
+            {
+              role: 'user',
+              content: [
+                {
+                  type: 'image_url',
+                  image_url: { url: dataUrl },
+                },
+                {
+                  type: 'text',
+                  text: 'This is a Sagrada board game window (4 rows × 5 columns grid). Identify each die placed on the board. Return ONLY a valid JSON array, no markdown fences, with objects: { "row": 0-3, "col": 0-4, "color": "red|yellow|green|blue|purple", "value": 1-6 }. Use 0-based row/col indices. Omit empty cells.',
+                },
+              ],
+            },
+          ],
+          temperature: 0,
+        }),
+      });
 
       if (!response.ok) {
+        if (response.status === 429) {
+          throw new Error('RATE_LIMITED');
+        }
         throw new Error('API_ERROR');
       }
 
-      const payload = (await response.json()) as GeminiResponse;
-      const jsonText = payload.candidates?.[0]?.content?.parts?.[0]?.text;
+      const payload = (await response.json()) as GitHubModelsResponse;
+      const jsonText = payload.choices?.[0]?.message?.content;
       if (!jsonText) {
         throw new Error('INVALID_RESPONSE');
       }
 
-      const parsed = JSON.parse(jsonText) as unknown;
-      if (!Array.isArray(parsed)) {
+      // gpt-4o with json_object format returns a JSON object, not always a bare array.
+      // Support both: bare array or { placements: [...] } / any top-level array value.
+      const rawParsed = JSON.parse(jsonText) as unknown;
+      let parsed: unknown[];
+      if (Array.isArray(rawParsed)) {
+        parsed = rawParsed;
+      } else if (typeof rawParsed === 'object' && rawParsed !== null) {
+        const firstArray = Object.values(rawParsed as Record<string, unknown>).find(Array.isArray);
+        parsed = (firstArray as unknown[] | undefined) ?? [];
+      } else {
         throw new Error('INVALID_FORMAT');
       }
 
