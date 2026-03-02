@@ -2,6 +2,11 @@
   "header": {
     "title": "Sagrada Counter"
   },
+  "language": {
+    "switch": "Switch language",
+    "en": "English",
+    "es": "Español"
+  },
   "steps": {
     "board": "Board Entry"
   },

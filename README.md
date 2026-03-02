@@ -1,23 +1,37 @@
 # Sagrada Counter
 
-A mobile-first web app built with **Vite + React + TypeScript** and **Tailwind CSS**.
+Sagrada Counter is a mobile-first web app that helps score a Sagrada board.
 
 ## Features
 
-- 📷 **Take photos** using your device camera (rear camera preferred on mobile)
-- 🖼️ **Upload photos** from your device gallery
-- 🗂️ **Photo gallery** with timestamps and individual delete buttons
+- 4x5 board entry with window pattern restrictions
+- Die placement, rule validation, and score breakdown
+- Public/private objective selection and favor token counter
+- Photo capture/upload flow to prefill board data with Gemini analysis
+- Internationalization with English and Spanish translations
 
-## Getting Started
+## Language
+
+- Default language is Spanish (`es`)
+- Language preference is persisted in `localStorage`
+- A `LanguageSwitcher` component is implemented and ready to be shown in the header when enabled
+
+## Setup
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+Create a `.env` file:
 
 ```bash
-npm run build
+VITE_GEMINI_API_KEY=
 ```
 
+## Scripts
+
+```bash
+npm run lint
+npm run build
+```

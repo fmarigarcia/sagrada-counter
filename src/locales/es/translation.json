@@ -2,6 +2,11 @@
   "header": {
     "title": "Contador de Sagrada"
   },
+  "language": {
+    "switch": "Cambiar idioma",
+    "en": "English",
+    "es": "Español"
+  },
   "steps": {
     "board": "Entrada del Tablero"
   },
