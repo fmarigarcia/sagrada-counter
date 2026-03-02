@@ -7,7 +7,7 @@ Sagrada Counter is a mobile-first web app that helps score a Sagrada board.
 - 4x5 board entry with window pattern restrictions
 - Die placement, rule validation, and score breakdown
 - Public/private objective selection and favor token counter
-- Photo capture/upload flow to prefill board data with Gemini analysis
+- Photo capture/upload flow to prefill board data with local image processing
 - Internationalization with English and Spanish translations
 
 ## Language
@@ -23,11 +23,7 @@ npm install
 npm run dev
 ```
 
-Create a `.env` file:
-
-```bash
-VITE_GEMINI_API_KEY=
-```
+No API key is required for photo processing.
 
 ## Scripts
 
