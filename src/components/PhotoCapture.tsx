@@ -4,7 +4,7 @@ interface PhotoCaptureProps {
   onPhoto: (dataUrl: string) => void
 }
 
-export function PhotoCapture({ onPhoto }: PhotoCaptureProps) {
+const PhotoCapture: React.FC<PhotoCaptureProps> = ({ onPhoto }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [streaming, setStreaming] = useState(false)
@@ -92,3 +92,5 @@ export function PhotoCapture({ onPhoto }: PhotoCaptureProps) {
     </div>
   )
 }
+
+export default PhotoCapture

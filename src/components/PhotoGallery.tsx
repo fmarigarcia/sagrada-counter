@@ -9,7 +9,7 @@ interface PhotoGalleryProps {
   onDelete: (id: string) => void
 }
 
-export function PhotoGallery({ photos, onDelete }: PhotoGalleryProps) {
+const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, onDelete }) => {
   if (photos.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-gray-400">
@@ -50,3 +50,4 @@ export function PhotoGallery({ photos, onDelete }: PhotoGalleryProps) {
 }
 
 export type { Photo }
+export default PhotoGallery

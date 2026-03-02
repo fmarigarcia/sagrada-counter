@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { PhotoCapture } from './components/PhotoCapture'
-import { PhotoUpload } from './components/PhotoUpload'
-import { PhotoGallery, type Photo } from './components/PhotoGallery'
+import  PhotoCapture  from './components/PhotoCapture'
+import  PhotoUpload  from './components/PhotoUpload'
+import  PhotoGallery,{ type Photo } from './components/PhotoGallery'
 import './index.css'
 
 function App() {

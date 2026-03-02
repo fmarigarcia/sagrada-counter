@@ -4,7 +4,7 @@ interface PhotoUploadProps {
   onPhoto: (dataUrl: string) => void
 }
 
-export function PhotoUpload({ onPhoto }: PhotoUploadProps) {
+const PhotoUpload: React.FC<PhotoUploadProps> = ({ onPhoto }) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,3 +39,5 @@ export function PhotoUpload({ onPhoto }: PhotoUploadProps) {
     </div>
   )
 }
+
+export default PhotoUpload
