@@ -93,5 +93,13 @@
     "label": "Favor Tokens remaining",
     "increment": "Increase favor tokens",
     "decrement": "Decrease favor tokens"
+  },
+  "score": {
+    "total": "Total VP",
+    "breakdown": "Score Breakdown",
+    "privateObjective": "Private Objective",
+    "favorTokens": "Favor Tokens",
+    "openSpaces": "Open Spaces",
+    "selectPrivateObjective": "Select a private objective to calculate score."
   }
 }
