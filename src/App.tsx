@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next';
 import BoardGrid from './components/board/BoardGrid';
 import DiePicker from './components/board/DiePicker';
 import WindowPatternSelector from './components/board/WindowPatternSelector';
+import PhotoCapture from './components/PhotoCapture';
+import PhotoUpload from './components/PhotoUpload';
 import windowPatterns from './data/windowPatterns.json';
 import useBoardState from './hooks/useBoardState';
+import usePhotoAnalysis from './hooks/usePhotoAnalysis';
 import type { Die, WindowPattern } from './types/game';
 
 interface SelectedCell {
@@ -17,7 +20,8 @@ const App: React.FC = () => {
   const patterns = windowPatterns as WindowPattern[];
   const [selectedPatternId, setSelectedPatternId] = useState<string>(patterns[0].id);
   const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
-  const { board, setDie, loadPattern, reset } = useBoardState();
+  const { board, setDie, loadPattern, prefillFromAnalysis, reset } = useBoardState();
+  const { analyse, loading: photoLoading, error: photoError } = usePhotoAnalysis();
 
   useEffect(() => {
     const selectedPattern = patterns.find((pattern) => pattern.id === selectedPatternId);
@@ -37,6 +41,13 @@ const App: React.FC = () => {
     setDie(selectedCell.row, selectedCell.col, die);
   };
 
+  const handlePhoto = async (dataUrl: string): Promise<void> => {
+    const placements = await analyse(dataUrl);
+    if (placements.length > 0) {
+      prefillFromAnalysis(placements);
+    }
+  };
+
   const selectedDie =
     selectedCell === null ? null : board[selectedCell.row][selectedCell.col]?.die ?? null;
 
@@ -52,6 +63,14 @@ const App: React.FC = () => {
           selectedPatternId={selectedPatternId}
           onPatternSelect={handlePatternSelect}
         />
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-2">
+            <PhotoCapture onPhoto={handlePhoto} />
+            <PhotoUpload onPhoto={handlePhoto} />
+          </div>
+          {photoLoading && <p className="text-sm text-gray-500">{t('photo.analysing')}</p>}
+          {photoError && <p className="text-sm text-red-500">{t('photo.error')}</p>}
+        </div>
         <BoardGrid board={board} onCellClick={(row, col) => setSelectedCell({ row, col })} />
         <button
           type="button"

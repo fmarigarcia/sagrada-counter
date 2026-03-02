@@ -1,5 +1,12 @@
 import { useCallback, useState } from 'react';
-import type { BoardState, Cell, CellRestriction, Die, WindowPattern } from '../types/game';
+import type {
+  AnalysisPlacement,
+  BoardState,
+  Cell,
+  CellRestriction,
+  Die,
+  WindowPattern,
+} from '../types/game';
 
 const createEmptyBoard = (restrictions?: CellRestriction[][]): BoardState =>
   Array.from({ length: 4 }, (_, row) =>
@@ -13,6 +20,7 @@ interface UseBoardStateReturn {
   board: BoardState;
   setDie: (row: number, col: number, die: Die | null) => void;
   loadPattern: (pattern: WindowPattern) => void;
+  prefillFromAnalysis: (placements: AnalysisPlacement[]) => void;
   reset: () => void;
 }
 
@@ -35,6 +43,21 @@ const useBoardState = (): UseBoardStateReturn => {
     setBoard(createEmptyBoard(pattern.grid));
   }, []);
 
+  const prefillFromAnalysis = useCallback((placements: AnalysisPlacement[]): void => {
+    setBoard((prev) =>
+      prev.map((boardRow, rowIndex) =>
+        boardRow.map((cell, colIndex) => {
+          const placement = placements.find(
+            (candidate) => candidate.row === rowIndex && candidate.col === colIndex,
+          );
+          return placement
+            ? { ...cell, die: { color: placement.color, value: placement.value } }
+            : { ...cell, die: null };
+        }),
+      ),
+    );
+  }, []);
+
   const reset = useCallback((): void => {
     setBoard(createEmptyBoard(currentPattern?.grid));
   }, [currentPattern]);
@@ -43,6 +66,7 @@ const useBoardState = (): UseBoardStateReturn => {
     board,
     setDie,
     loadPattern,
+    prefillFromAnalysis,
     reset,
   };
 };
