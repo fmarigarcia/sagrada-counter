@@ -24,5 +24,70 @@
     "analysing": "Analizando…",
     "error": "No se pudo analizar la foto. Inténtalo de nuevo o completa manualmente.",
     "cameraError": "No se pudo acceder a la cámara. Permite el acceso a la cámara."
+  },
+  "objectives": {
+    "publicLabel": "Objetivos públicos (elige hasta 3)",
+    "privateLabel": "Objetivo privado",
+    "vpPerUnit": "{{value}} PV",
+    "rowColorVariety": {
+      "name": "Variedad de Color en Filas",
+      "description": "6 PV por cada fila completa sin colores repetidos"
+    },
+    "colColorVariety": {
+      "name": "Variedad de Color en Columnas",
+      "description": "5 PV por cada columna completa sin colores repetidos"
+    },
+    "rowShadeVariety": {
+      "name": "Variedad de Tonos en Filas",
+      "description": "5 PV por cada fila completa sin valores repetidos"
+    },
+    "colShadeVariety": {
+      "name": "Variedad de Tonos en Columnas",
+      "description": "4 PV por cada columna completa sin valores repetidos"
+    },
+    "lightShades": {
+      "name": "Tonos Claros",
+      "description": "2 PV por cada par de dados con valor 1 y 2"
+    },
+    "mediumShades": {
+      "name": "Tonos Medios",
+      "description": "2 PV por cada par de dados con valor 3 y 4"
+    },
+    "deepShades": {
+      "name": "Tonos Intensos",
+      "description": "2 PV por cada par de dados con valor 5 y 6"
+    },
+    "shadeVariety": {
+      "name": "Variedad de Tonos",
+      "description": "5 PV por cada conjunto con un dado de cada valor del 1 al 6"
+    },
+    "colorVariety": {
+      "name": "Variedad de Color",
+      "description": "4 PV por cada conjunto con un dado de cada color"
+    },
+    "colorDiagonals": {
+      "name": "Diagonales de Color",
+      "description": "1 PV por dado con al menos un dado diagonal del mismo color"
+    },
+    "privateRed": {
+      "name": "Tonos de Rojo"
+    },
+    "privateYellow": {
+      "name": "Tonos de Amarillo"
+    },
+    "privateGreen": {
+      "name": "Tonos de Verde"
+    },
+    "privateBlue": {
+      "name": "Tonos de Azul"
+    },
+    "privatePurple": {
+      "name": "Tonos de Morado"
+    }
+  },
+  "tokens": {
+    "label": "Fichas de Favor restantes",
+    "increment": "Incrementar fichas de favor",
+    "decrement": "Disminuir fichas de favor"
   }
 }

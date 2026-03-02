@@ -1,0 +1,27 @@
+[
+  {
+    "id": "private-red",
+    "nameKey": "objectives.privateRed.name",
+    "color": "red"
+  },
+  {
+    "id": "private-yellow",
+    "nameKey": "objectives.privateYellow.name",
+    "color": "yellow"
+  },
+  {
+    "id": "private-green",
+    "nameKey": "objectives.privateGreen.name",
+    "color": "green"
+  },
+  {
+    "id": "private-blue",
+    "nameKey": "objectives.privateBlue.name",
+    "color": "blue"
+  },
+  {
+    "id": "private-purple",
+    "nameKey": "objectives.privatePurple.name",
+    "color": "purple"
+  }
+]
