@@ -1,0 +1,24 @@
+[
+  {
+    "id": "fulgor-del-cielo",
+    "name": "Fulgor del Cielo",
+    "difficulty": 6,
+    "grid": [
+      [{ "type": "none" }, { "type": "color", "value": "yellow" }, { "type": "value", "value": 5 }, { "type": "none" }, { "type": "none" }],
+      [{ "type": "value", "value": 6 }, { "type": "none" }, { "type": "none" }, { "type": "color", "value": "blue" }, { "type": "none" }],
+      [{ "type": "none" }, { "type": "color", "value": "green" }, { "type": "none" }, { "type": "none" }, { "type": "value", "value": 2 }],
+      [{ "type": "none" }, { "type": "none" }, { "type": "color", "value": "purple" }, { "type": "none" }, { "type": "value", "value": 4 }]
+    ]
+  },
+  {
+    "id": "sun-catcher",
+    "name": "Sun Catcher",
+    "difficulty": 5,
+    "grid": [
+      [{ "type": "color", "value": "red" }, { "type": "none" }, { "type": "value", "value": 1 }, { "type": "none" }, { "type": "color", "value": "yellow" }],
+      [{ "type": "none" }, { "type": "value", "value": 3 }, { "type": "none" }, { "type": "color", "value": "green" }, { "type": "none" }],
+      [{ "type": "none" }, { "type": "color", "value": "blue" }, { "type": "none" }, { "type": "value", "value": 6 }, { "type": "none" }],
+      [{ "type": "value", "value": 2 }, { "type": "none" }, { "type": "color", "value": "purple" }, { "type": "none" }, { "type": "value", "value": 5 }]
+    ]
+  }
+]

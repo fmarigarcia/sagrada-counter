@@ -1,0 +1,21 @@
+{
+  "header": {
+    "title": "Sagrada Counter"
+  },
+  "steps": {
+    "board": "Board Entry"
+  },
+  "board": {
+    "selectPattern": "Window Pattern",
+    "clearAllDice": "Clear all dice",
+    "cellAria": "Cell {{row}}, {{col}}"
+  },
+  "diePicker": {
+    "title": "Choose die",
+    "color": "Color",
+    "value": "Value",
+    "clear": "Clear",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  }
+}
