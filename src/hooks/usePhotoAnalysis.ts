@@ -9,6 +9,16 @@ interface UsePhotoAnalysisReturn {
 
 const BOARD_ROWS = 4;
 const BOARD_COLS = 5;
+const DIE_STD_LUMA_MIN = 24;
+const DIE_COLORFULNESS_MIN = 24;
+const DIE_SATURATION_MIN = 0.24;
+const DIE_LOW_STD_LUMA_MIN = 18;
+const VALUE_STD_MULTIPLIER = 0.8;
+const VALUE_BRIGHT_THRESHOLD_MAX = 245;
+const VALUE_DARK_THRESHOLD_MIN = 10;
+const VALUE_COMPONENT_MIN_AREA_RATIO = 0.002;
+const VALUE_COMPONENT_MAX_AREA_RATIO = 0.08;
+const CELL_SAMPLE_PADDING_RATIO = 0.18;
 const validColors: DiceColor[] = ['red', 'yellow', 'green', 'blue', 'purple'];
 const validValues: DiceValue[] = [1, 2, 3, 4, 5, 6];
 
@@ -118,8 +128,8 @@ const getCellStats = (data: Uint8ClampedArray): CellStats => {
 };
 
 const isLikelyDie = (stats: CellStats): boolean =>
-  (stats.stdLuma > 24 && stats.colorfulness > 24) ||
-  (stats.avgSaturation > 0.24 && stats.stdLuma > 18);
+  (stats.stdLuma > DIE_STD_LUMA_MIN && stats.colorfulness > DIE_COLORFULNESS_MIN) ||
+  (stats.avgSaturation > DIE_SATURATION_MIN && stats.stdLuma > DIE_LOW_STD_LUMA_MIN);
 
 const detectDieColor = (stats: CellStats): DiceColor => {
   const { hue } = rgbToHsl(stats.avgR, stats.avgG, stats.avgB);
@@ -211,10 +221,10 @@ const detectDieValue = (data: Uint8ClampedArray, width: number, height: number):
   const mean = sum / total;
   const variance = Math.max(0, sumSq / total - mean * mean);
   const std = Math.sqrt(variance);
-  const brightThreshold = Math.min(245, mean + std * 0.8);
-  const darkThreshold = Math.max(10, mean - std * 0.8);
-  const minArea = Math.max(3, Math.round(total * 0.002));
-  const maxArea = Math.max(minArea + 1, Math.round(total * 0.08));
+  const brightThreshold = Math.min(VALUE_BRIGHT_THRESHOLD_MAX, mean + std * VALUE_STD_MULTIPLIER);
+  const darkThreshold = Math.max(VALUE_DARK_THRESHOLD_MIN, mean - std * VALUE_STD_MULTIPLIER);
+  const minArea = Math.max(3, Math.round(total * VALUE_COMPONENT_MIN_AREA_RATIO));
+  const maxArea = Math.max(minArea + 1, Math.round(total * VALUE_COMPONENT_MAX_AREA_RATIO));
   const brightMask = gray.map((value) => value >= brightThreshold);
   const darkMask = gray.map((value) => value <= darkThreshold);
   const brightCount = countConnectedComponents(brightMask, width, height, minArea, maxArea);
@@ -244,8 +254,8 @@ const detectPlacements = (context: CanvasRenderingContext2D): AnalysisPlacement[
 
   for (let row = 0; row < BOARD_ROWS; row += 1) {
     for (let col = 0; col < BOARD_COLS; col += 1) {
-      const paddingX = Math.floor(cellWidth * 0.18);
-      const paddingY = Math.floor(cellHeight * 0.18);
+      const paddingX = Math.floor(cellWidth * CELL_SAMPLE_PADDING_RATIO);
+      const paddingY = Math.floor(cellHeight * CELL_SAMPLE_PADDING_RATIO);
       const x = Math.floor(col * cellWidth + paddingX);
       const y = Math.floor(row * cellHeight + paddingY);
       const width = Math.max(8, Math.floor(cellWidth - paddingX * 2));
