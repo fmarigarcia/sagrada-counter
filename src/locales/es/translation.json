@@ -1,0 +1,21 @@
+{
+  "header": {
+    "title": "Contador de Sagrada"
+  },
+  "steps": {
+    "board": "Entrada del Tablero"
+  },
+  "board": {
+    "selectPattern": "Patrón de Vidriera",
+    "clearAllDice": "Limpiar todos los dados",
+    "cellAria": "Celda {{row}}, {{col}}"
+  },
+  "diePicker": {
+    "title": "Elegir dado",
+    "color": "Color",
+    "value": "Valor",
+    "clear": "Limpiar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  }
+}

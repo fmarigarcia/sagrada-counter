@@ -1,52 +1,75 @@
-import { useState } from 'react'
-import  PhotoCapture  from './components/PhotoCapture'
-import  PhotoUpload  from './components/PhotoUpload'
-import  PhotoGallery,{ type Photo } from './components/PhotoGallery'
-import './index.css'
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import BoardGrid from './components/board/BoardGrid';
+import DiePicker from './components/board/DiePicker';
+import WindowPatternSelector from './components/board/WindowPatternSelector';
+import windowPatterns from './data/windowPatterns.json';
+import useBoardState from './hooks/useBoardState';
+import type { Die, WindowPattern } from './types/game';
 
-function App() {
-  const [photos, setPhotos] = useState<Photo[]>([])
-
-  const addPhoto = (dataUrl: string) => {
-    setPhotos((prev) => [
-      { id: crypto.randomUUID(), dataUrl, takenAt: new Date() },
-      ...prev,
-    ])
-  }
-
-  const deletePhoto = (id: string) => {
-    setPhotos((prev) => prev.filter((p) => p.id !== id))
-  }
-
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header */}
-      <header className="bg-indigo-700 text-white px-4 py-4 shadow-md">
-        <h1 className="text-xl font-bold tracking-wide text-center">🏛️ Sagrada Counter</h1>
-      </header>
-
-      {/* Main content */}
-      <main className="flex-1 flex flex-col gap-5 px-4 py-5 max-w-lg mx-auto w-full">
-        {/* Action buttons */}
-        <section className="bg-white rounded-2xl shadow p-4 flex flex-col gap-4 items-center">
-          <h2 className="text-gray-700 font-semibold text-base">Add a Photo</h2>
-          <div className="flex flex-wrap gap-3 justify-center w-full">
-            <PhotoCapture onPhoto={addPhoto} />
-            <PhotoUpload onPhoto={addPhoto} />
-          </div>
-        </section>
-
-        {/* Gallery */}
-        <section className="bg-white rounded-2xl shadow p-4">
-          <h2 className="text-gray-700 font-semibold text-base mb-3">
-            Gallery{photos.length > 0 ? ` (${photos.length})` : ''}
-          </h2>
-          <PhotoGallery photos={photos} onDelete={deletePhoto} />
-        </section>
-      </main>
-    </div>
-  )
+interface SelectedCell {
+  row: number;
+  col: number;
 }
 
-export default App
+const App: React.FC = () => {
+  const { t } = useTranslation();
+  const patterns = windowPatterns as WindowPattern[];
+  const [selectedPatternId, setSelectedPatternId] = useState<string>(patterns[0].id);
+  const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
+  const { board, setDie, loadPattern, reset } = useBoardState();
 
+  useEffect(() => {
+    const selectedPattern = patterns.find((pattern) => pattern.id === selectedPatternId);
+    if (selectedPattern) {
+      loadPattern(selectedPattern);
+    }
+  }, [loadPattern, patterns, selectedPatternId]);
+
+  const handlePatternSelect = (patternId: string): void => {
+    setSelectedPatternId(patternId);
+  };
+
+  const handleDieConfirm = (die: Die | null): void => {
+    if (!selectedCell) {
+      return;
+    }
+    setDie(selectedCell.row, selectedCell.col, die);
+  };
+
+  const selectedDie =
+    selectedCell === null ? null : board[selectedCell.row][selectedCell.col]?.die ?? null;
+
+  return (
+    <div className="min-h-screen bg-gray-50 px-4 py-6">
+      <div className="mx-auto flex w-full max-w-md flex-col gap-4 rounded-2xl bg-white p-4 shadow">
+        <header>
+          <h1 className="text-center text-2xl font-bold text-indigo-700">{t('header.title')}</h1>
+          <p className="text-center text-sm text-gray-500">F1 · {t('steps.board')}</p>
+        </header>
+        <WindowPatternSelector
+          patterns={patterns}
+          selectedPatternId={selectedPatternId}
+          onPatternSelect={handlePatternSelect}
+        />
+        <BoardGrid board={board} onCellClick={(row, col) => setSelectedCell({ row, col })} />
+        <button
+          type="button"
+          onClick={reset}
+          className="rounded-xl bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-700"
+        >
+          {t('board.clearAllDice')}
+        </button>
+      </div>
+      {selectedCell && (
+        <DiePicker
+          initialDie={selectedDie}
+          onConfirm={handleDieConfirm}
+          onClose={() => setSelectedCell(null)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default App;
