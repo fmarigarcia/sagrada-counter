@@ -6,9 +6,9 @@ import es from './locales/es/translation.json';
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
   resources: { en: { translation: en }, es: { translation: es } },
-  fallbackLng: 'en',
+  fallbackLng: 'es',
   supportedLngs: ['en', 'es'],
-  detection: { order: ['localStorage', 'navigator'], caches: ['localStorage'] },
+  detection: { order: ['localStorage'], caches: ['localStorage'] },
   interpolation: { escapeValue: false },
 });
 
